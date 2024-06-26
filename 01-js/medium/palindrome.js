@@ -4,6 +4,27 @@
 */
 
 function isPalindrome(str) {
+
+
+  const punctuations = ".,:!? "
+  for (let i = 0, j = str.length - 1; i < str.length / 2; i++, j--) {
+    let flag = 0;
+    if (punctuations.indexOf(str[i]) != -1) {
+      j++;
+      flag++;
+    }
+    if (punctuations.indexOf(str[j]) != -1) {
+      i--;
+      flag++;
+    }
+    if (flag != 0) {
+      continue;
+    }
+    if (str[i].toLowerCase() != str[j].toLowerCase()) {
+      return false;
+    }
+  }
+
   return true;
 }
 
