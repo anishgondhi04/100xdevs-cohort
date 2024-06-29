@@ -34,9 +34,6 @@ class Calculator {
   }
 
   divide(number) {
-    if (number === 0) {
-      throw new Error("Division by zero is not allowed.");
-    }
     this.result /= number;
   }
 
