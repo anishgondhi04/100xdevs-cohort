@@ -11,7 +11,21 @@
 */
 
 class Todo {
+  add(todo){
+    this.todos.push(todo)
+  }
+  remove(indexOfTodo){
 
+  }
+  getAll(){
+    return this.todos;
+  }
+  get(indexOfTodo){
+    return this.todos[indexOfTodo];
+  }
+  clear(){
+    
+  }
 }
 
 module.exports = Todo;
