@@ -14,7 +14,6 @@ app.get('/user', function(req, res) {
   throw new Error("User not found");
   res.status(200).json({ name: 'john' });
 });
-// Adding a new comment for test
 
 app.post('/user', function(req, res) {
   res.status(200).json({ msg: 'created dummy user' });
@@ -24,11 +23,9 @@ app.get('/errorCount', function(req, res) {
   res.status(200).json({ errorCount });
 });
 
-//Added comment
-
-app.use((req,res,next)=>{
+app.use((err,req,res,next)=>{
   errorCount++;
-  res.status(404).send('endpoint not found');
+  res.sendStatus(404);
 })
 
 module.exports = app;
